@@ -39,8 +39,8 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_SPECIFIC_HEADER_PATH += device/zte/n817/include
 
 # Inline kernel building
-# BOARD_KERNEL_SEPARATED_DT := true
-# BOARD_CUSTOM_BOOTIMG_MK := device/zte/n817/mkbootimg.mk
+BOARD_KERNEL_SEPARATED_DT := true
+BOARD_CUSTOM_BOOTIMG_MK := device/zte/n817/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/zte/n817
 TARGET_KERNEL_CONFIG := msm8610_wellington_defconfig
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37
