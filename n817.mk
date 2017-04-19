@@ -5,6 +5,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 $(call inherit-product-if-exists, vendor/zte/n817/n817-vendor.mk)
+$(call inherit-product-if-exists, vendor/security/setup-keys.mk)
 
 # Audio
 PRODUCT_PACKAGES += \
