@@ -11,10 +11,6 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # Inherit device configuration
 $(call inherit-product, device/zte/n817/n817.mk)
 
-# F-Droid Privileged Extension
-PRODUCT_PACKAGES += \
-    FDroidPrivilegedExtension
-
 # Google Services client ID
 PRODUCT_GMS_CLIENTID_BASE := android-zte
 
