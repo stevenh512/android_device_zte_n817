@@ -33,8 +33,8 @@ ARCH_ARM_HAVE_NEON := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 BOARD_USES_QCOM_HARDWARE := true
 
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CFLAGS += -O3 -mtune=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=softfp -ffast-math
+TARGET_GLOBAL_CPPFLAGS += -O3 -mtune=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=softfp -ffast-math
 
 TARGET_SPECIFIC_HEADER_PATH += device/zte/n817/include
 
@@ -53,6 +53,9 @@ BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 USE_CUSTOM_AUDIO_POLICY := 1
+
+# Bionic
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/zte/n817/bluetooth
