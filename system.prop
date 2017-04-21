@@ -1,0 +1,189 @@
+# system.prop for msm8610
+#
+# Use reference RIL for initial bringup
+#rild.libpath=/system/lib/libreference-ril.so
+rild.libpath=/vendor/lib/libril-qc-qmi-1.so
+rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
+DEVICE_PROVISIONED=1
+persist.radio.msgtunnel.start=false
+persist.radio.atfwd.start=true
+# Start in cdma mode
+ro.telephony.default_network=4
+#
+# system props for the cne module
+#
+persist.cne.feature=1
+# Skip /sys/power/wait_for_fb_* nodes and
+# force FB to be always on
+debug.sf.fb_always_on=1
+debug.composition.type=dyn
+debug.gralloc.map_fb_memory=0
+debug.hwc.dynThreshold=1.5
+dalvik.vm.heapsize=36m
+dev.pm.dyn_samplingrate=1
+ro.hdmi.enable=true
+#system props for the MM modules
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
+#37491 is decimal sum of supported codecs in AAL
+#codecs: AVI AC3 ASF AAC QCP DTS 3G2 MP2TS
+mm.enable.qcom_parser=37491
+# VIDC: debug_levels
+# 1:ERROR 2:HIGH 4:LOW 0:NOlogs 7:AllLogs
+vidc.debug.level=1
+#
+# system props for widevine
+#
+persist.gralloc.cp.level3=1
+#
+# system props for the data modules
+#
+ro.use_data_netmgrd=true
+#system props for time-services
+persist.timed.enable=true
+#
+# system prop for opengles version
+#
+# 196608 is decimal for 0x30000 to report version 3
+ro.opengles.version=196608
+#
+# System props for telephony
+# System prop to turn on CdmaLTEPhone always
+#telephony.lteOnCdmaDevice=1
+# simulate sdcard on /data/media
+#
+persist.fuse_sdcard=true
+#
+#snapdragon value add features
+#
+ro.qc.sdk.audio.ssr=false
+##fluencetype can be "fluence" or "fluencepro" or "none"
+ro.qc.sdk.audio.fluencetype=none
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=false
+persist.audio.fluence.speaker=true
+# Reduce Background apps limit
+# System property for cabl
+ro.qualcomm.cabl=0
+# system prop for NFC DT
+ro.nfc.port=I2C
+#
+#DASH video streaming
+#Specify max allowed resolution/bandwidth for representations
+#Set allowed avsync window during playback
+#
+persist.dash.max.rep.resolution=1280*720
+persist.dash.max.rep.bandwidth=4000000
+persist.dash.avsync.window.msec=100
+tunnel.audio.encode = false
+#use VERY_HIGH_QUALITY for audio resampler
+af.resampler.quality=4
+#Buffer size in kbytes for compress offload playback
+audio.offload.buffer.size.kb=32
+#8x10 does not support tunnel av playback
+#this prop should be set to false all the time
+av.offload.enable=false
+#enable voice path for PCM VoIP by default
+use.voice.path.for.pcm.voip=true
+#
+#System property for FM transmitter
+#
+ro.fm.transmitter=false
+#enable dsp gapless mode by default
+audio.offload.gapless.enabled=true
+#additional max allowed background services on bootup
+persist.added_boot_bgservices=4
+#property to force camera shutter sound on speaker
+ro.camera.sound.forced=1
+# tongcd add
+ro.sys.fw.bg_apps_limit=16
+ro.config.low_ram=true
+#
+# ADDITIONAL_BUILD_PROPERTIES
+#
+persist.camera.tintless=enable
+persist.radio.en_wifi_lte=false
+ro.com.google.clientidbase=android-zte
+ro.com.google.clientidbase.yt=android-sprint-mvno-us
+ro.com.google.clientidbase.am=android-sprint-mvno-us
+ro.build.baseband_version=N817B01
+ro.emode.delete.tests=auxmic,led
+persist.radio.use_nv_for_ehrpd=true
+ro.emode.flashtest=false
+ro.build.pri.version=5
+ro.build.sw_internal_version=N817V1.0.0B09
+ro.emode.fm=1
+ro.emode.keytest=home,back,menu
+persist.radio.apm_sim_not_pwdn=0
+ro.emmc=1
+ro.streaming.ua.prof=http://www.zte.com.cn/mobile/uaprof/N817.xml
+ro.com.google.clientidbase.ms=android-sprint-mvno-us
+drm.service.enabled=true
+persist.radio.mode_pref_nv10=1
+persist.radio.apm_mdm_not_pwdn=1
+ro.config.suppress_ipv6=false
+ro.browser.home.page=http://www.google.com/m?client=ms-hms-sprint-us&channel=portal
+ro.cnap.oic=0
+ro.cnap.yh=0
+ro.cnap.configstatus=-1
+ro.setupwizard.launchtype=0
+ro.home.operator.carrierid=Chameleon
+persist.product.reseller.name=Chameleon
+ro.cdma.home.operator.numeric=310000
+ro.cdma.home.operator.alpha=Chameleon
+ro.config.multimode_cdma=false
+persist.carrier.selected_id=SPRINT
+persist.carrier.activated_id=SPRINT
+persist.sys.usb.sprint=enable
+persist.sys.usb.menu=enable
+persist.sys.usb.config=mtp
+ro.config.alarm_alert=Dawn_of_the_jungle.ogg
+ro.config.notification_sound=Crisp.ogg
+ro.config.ringtone=Orion.ogg
+dalvik.vm.heapstartsize=5m
+dalvik.vm.heapgrowthlimit=48m
+dalvik.vm.heapsize=128m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapmaxfree=2m
+persist.sys.logkit.ctrlcode=0
+keyguard.no_require_sim=true
+ro.com.android.dataroaming=true
+ro.com.android.dateformat=MM-dd-yyyy
+ro.carrier=unknown
+ro.vendor.extension_library=/vendor/lib/libqc-opt.so
+ro.setupwizard.mode=DISABLED
+ro.com.google.gmsversion=4.4_r6
+ro.com.google.clientidbase.gmm=android-zte
+persist.radio.add_power_save=1
+ro.telephony.default_network=4
+ro.adb.secure=0
+persist.sys.ztelog.enable=0
+persist.sys.ssr.restart_level=3
+persist.radio.adb_log_on=1
+persist.sys.dalvik.vm.lib=libdvm.so
+net.bt.name=Android
+dalvik.vm.stack-trace-file=/data/anr/traces.txt
+ro.qc.sdk.izat.premium_enabled=1
+ro.qc.sdk.izat.service_mask=0x1
+persist.gps.qc_nlp_in_use=1
+persist.loc.nlp_name=com.qualcomm.services.location
+ro.gps.agps_provider=1
+ro.pip.gated=0
+
